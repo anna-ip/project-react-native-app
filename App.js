@@ -6,23 +6,20 @@ import { render } from "react-dom";
 
 
 
-// const DATA = {   ///this was the initial code fot the data
-//   timer: 1234567,
-//   laps: [12345, 23456, 34567, 45678],
-// }
+
 
 function Timer({ interval, style }) {
   const pad = (n) => n < 10 ? '0' + n : n
   const duration = moment.duration(interval)
   const centiseconds = Math.floor(duration.milliseconds() / 10)
   return (
-    // <View style={styles.timerContainer}>
+
     <TimerContainer>
       <Text style={style}>{pad(duration.minutes())}:</Text>
       <Text style={style}>{pad(duration.seconds())},</Text>
       <Text style={style}>{pad(centiseconds)}</Text>
     </TimerContainer>
-    // </View>
+
   )
 }
 
@@ -35,7 +32,6 @@ function RoundButton({ title, color, background, onPress, disabled }) {
       activeOpacity={disabled ? 1.0 : 0.7} //activeOpacity changed the opacity of the TouchableOpacity
     >
       <ButtonBorderContainer>
-        {/* <ButtonBorderContainer style={styles.buttonBorder}> */}
         <Text style={[styles.buttonTitle, { color }]}>{title}</Text>
       </ButtonBorderContainer>
     </TouchableOpacity >
